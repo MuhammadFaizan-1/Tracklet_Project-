@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracklet — Child Safety Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts: Nunito (friendly, rounded, safe feel) + DM Sans (clean body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===========================
+       TOP APP BAR
+  ============================ -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-logo">
+          <span class="logo-icon">🛡️</span>
+          <span class="logo-text">Tracklet</span>
+        </div>
+        <div class="topbar-actions">
+          <span class="topbar-bell">🔔</span>
+          <div class="topbar-avatar">P</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===========================
+       MAIN CONTENT WRAPPER
+  ============================ -->
+    <main class="main-content">
+      <!-- ===========================
+         SECTION 1: HOME DASHBOARD
+    ============================ -->
+      <section class="section" id="home">
+        <!-- Greeting -->
+        <div class="greeting">
+          <p class="greeting-sub">Good Morning, Parent 👋</p>
+          <h1 class="greeting-title">Your Family is Safe</h1>
+        </div>
+
+        <!-- Child Profile Card -->
+        <div class="profile-card">
+          <div class="profile-card-left">
+            <div class="profile-avatar">
+              <span>👦</span>
+            </div>
+            <div class="profile-info">
+              <p class="profile-label">Monitoring</p>
+              <h2 class="profile-name">Ali's Tracklet</h2>
+              <span class="badge badge-safe">✅ Safe</span>
+            </div>
+          </div>
+          <div class="profile-card-right">
+            <div class="profile-stat">
+              <span class="stat-icon">📍</span>
+              <div>
+                <p class="stat-label">Location</p>
+                <p class="stat-value">School</p>
+              </div>
+            </div>
+            <div class="profile-stat">
+              <span class="stat-icon">🔋</span>
+              <div>
+                <p class="stat-label">Battery</p>
+                <p class="stat-value">82%</p>
+              </div>
+            </div>
+            <div class="profile-stat">
+              <span class="stat-icon">🕐</span>
+              <div>
+                <p class="stat-label">Updated</p>
+                <p class="stat-value">2 min ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Cards Grid -->
+        <h2 class="section-title">Quick Overview</h2>
+        <div class="quick-grid">
+          <div class="quick-card quick-card--location">
+            <span class="qc-icon">📍</span>
+            <p class="qc-label">Live Location</p>
+            <p class="qc-value">School</p>
+            <p class="qc-sub">±5 meters</p>
+          </div>
+          <div class="quick-card quick-card--status">
+            <span class="qc-icon">💚</span>
+            <p class="qc-label">Child Status</p>
+            <p class="qc-value">Safe</p>
+            <p class="qc-sub">No alerts</p>
+          </div>
+          <div class="quick-card quick-card--battery">
+            <span class="qc-icon">🔋</span>
+            <p class="qc-label">Battery</p>
+            <p class="qc-value">82%</p>
+            <!-- Battery bar -->
+            <div class="battery-bar">
+              <div class="battery-fill" style="width: 82%"></div>
+            </div>
+          </div>
+          <div class="quick-card quick-card--zone">
+            <span class="qc-icon">🏫</span>
+            <p class="qc-label">Safe Zone</p>
+            <p class="qc-value">Inside</p>
+            <p class="qc-sub">School Zone</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 2: LIVE TRACKING
+    ============================ -->
+      <section class="section" id="live-tracking">
+        <h2 class="section-title">📡 Live Tracking</h2>
+
+        <!-- Map Placeholder (CSS only, no JS) -->
+        <div class="map-card">
+          <div class="map-placeholder">
+            <!-- Grid lines to simulate map -->
+            <div class="map-grid"></div>
+            <!-- Roads simulation -->
+            <div class="map-road map-road--h1"></div>
+            <div class="map-road map-road--h2"></div>
+            <div class="map-road map-road--v1"></div>
+            <div class="map-road map-road--v2"></div>
+            <!-- Location pin -->
+            <div class="map-pin">
+              <span class="pin-icon">📍</span>
+              <div class="pin-pulse"></div>
+            </div>
+            <!-- Map labels -->
+            <div class="map-label map-label--school">🏫 School</div>
+            <div class="map-label map-label--home">🏠 Home</div>
+            <div class="map-overlay-badge">LIVE</div>
+          </div>
+          <!-- Tracking Info -->
+          <div class="tracking-info">
+            <div class="tracking-row">
+              <span class="ti-label">📍 Current Location</span>
+              <span class="ti-value">Al-Noor School, Block B</span>
+            </div>
+            <div class="tracking-row">
+              <span class="ti-label">🎯 Accuracy</span>
+              <span class="ti-value">±5 meters</span>
+            </div>
+            <div class="tracking-row">
+              <span class="ti-label">🕐 Updated</span>
+              <span class="ti-value">30 seconds ago</span>
+            </div>
+            <div class="tracking-row">
+              <span class="ti-label">🔄 Refresh Rate</span>
+              <span class="ti-value">Every 1–5 Minutes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 3: GEO-FENCING
+    ============================ -->
+      <section class="section" id="geofencing">
+        <h2 class="section-title">🗺️ Geo-Fencing &amp; Safe Zones</h2>
+
+        <!-- Safe Zone Cards -->
+        <div class="zone-grid">
+          <div class="zone-card zone-card--active">
+            <span class="zone-icon">🏫</span>
+            <p class="zone-name">School</p>
+            <span class="badge badge-inside">Inside</span>
+          </div>
+          <div class="zone-card">
+            <span class="zone-icon">🏠</span>
+            <p class="zone-name">Home</p>
+            <span class="badge badge-outside">Outside</span>
+          </div>
+          <div class="zone-card">
+            <span class="zone-icon">📚</span>
+            <p class="zone-name">Tuition Center</p>
+            <span class="badge badge-outside">Outside</span>
+          </div>
+          <div class="zone-card">
+            <span class="zone-icon">👴</span>
+            <p class="zone-name">Grandparents'</p>
+            <span class="badge badge-outside">Outside</span>
+          </div>
+        </div>
+
+        <!-- Notification Log -->
+        <h3 class="sub-title">Recent Zone Notifications</h3>
+        <div class="notif-log">
+          <div class="notif-item notif-item--arrive">
+            <span class="notif-dot notif-dot--green"></span>
+            <div class="notif-text">
+              <p class="notif-main">Ali arrived at School</p>
+              <p class="notif-time">Today, 8:02 AM</p>
+            </div>
+            <span class="notif-tag notif-tag--in">Entered</span>
+          </div>
+          <div class="notif-item">
+            <span class="notif-dot notif-dot--orange"></span>
+            <div class="notif-text">
+              <p class="notif-main">Ali left School</p>
+              <p class="notif-time">Yesterday, 2:30 PM</p>
+            </div>
+            <span class="notif-tag notif-tag--out">Left</span>
+          </div>
+          <div class="notif-item notif-item--arrive">
+            <span class="notif-dot notif-dot--green"></span>
+            <div class="notif-text">
+              <p class="notif-main">Ali arrived Home</p>
+              <p class="notif-time">Yesterday, 3:10 PM</p>
+            </div>
+            <span class="notif-tag notif-tag--in">Entered</span>
+          </div>
+          <div class="notif-item notif-item--arrive">
+            <span class="notif-dot notif-dot--blue"></span>
+            <div class="notif-text">
+              <p class="notif-main">Entered Safe Zone</p>
+              <p class="notif-time">Yesterday, 3:10 PM</p>
+            </div>
+            <span class="notif-tag notif-tag--in">Safe</span>
+          </div>
+          <div class="notif-item">
+            <span class="notif-dot notif-dot--orange"></span>
+            <div class="notif-text">
+              <p class="notif-main">Left Safe Zone</p>
+              <p class="notif-time">Today, 7:45 AM</p>
+            </div>
+            <span class="notif-tag notif-tag--out">Left</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 4: ALERTS CENTER
+    ============================ -->
+      <section class="section" id="alerts">
+        <h2 class="section-title">🔔 Alerts &amp; Notifications</h2>
+
+        <!-- Warning card (prominent) -->
+        <div class="alert-card alert-card--warning">
+          <div class="alert-card-header">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-title">Warning</span>
+            <span class="alert-badge alert-badge--warn">Action Needed</span>
+          </div>
+          <p class="alert-msg">Ali left the expected route.</p>
+          <div class="alert-meta">
+            <span>📍 Last Location: Johar Town</span>
+            <span>🕐 2:15 PM</span>
+          </div>
+        </div>
+
+        <!-- Alert cards list -->
+        <div class="alerts-list">
+          <div class="alert-row alert-row--green">
+            <span class="ar-icon">✅</span>
+            <div class="ar-text">
+              <p class="ar-title">Reached destination</p>
+              <p class="ar-sub">Ali arrived at School — 8:02 AM</p>
+            </div>
+            <span class="ar-time">8:02 AM</span>
+          </div>
+          <div class="alert-row alert-row--orange">
+            <span class="ar-icon">🚪</span>
+            <div class="ar-text">
+              <p class="ar-title">Left destination</p>
+              <p class="ar-sub">Ali left School</p>
+            </div>
+            <span class="ar-time">2:30 PM</span>
+          </div>
+          <div class="alert-row alert-row--red">
+            <span class="ar-icon">🆘</span>
+            <div class="ar-text">
+              <p class="ar-title">SOS Pressed</p>
+              <p class="ar-sub">Emergency alert triggered</p>
+            </div>
+            <span class="ar-time badge-urgent">Urgent</span>
+          </div>
+          <div class="alert-row alert-row--orange">
+            <span class="ar-icon">🔋</span>
+            <div class="ar-text">
+              <p class="ar-title">Low Battery</p>
+              <p class="ar-sub">Device battery at 15%</p>
+            </div>
+            <span class="ar-time">1:45 PM</span>
+          </div>
+          <div class="alert-row alert-row--gray">
+            <span class="ar-icon">📵</span>
+            <div class="ar-text">
+              <p class="ar-title">Device Offline</p>
+              <p class="ar-sub">Device went offline</p>
+            </div>
+            <span class="ar-time">12:30 PM</span>
+          </div>
+          <div class="alert-row alert-row--gray">
+            <span class="ar-icon">🛰️</span>
+            <div class="ar-text">
+              <p class="ar-title">Not Reporting Location</p>
+              <p class="ar-sub">GPS signal lost</p>
+            </div>
+            <span class="ar-time">11:00 AM</span>
+          </div>
+          <div class="alert-row alert-row--red">
+            <span class="ar-icon">🔀</span>
+            <div class="ar-text">
+              <p class="ar-title">Route Deviation</p>
+              <p class="ar-sub">Child diverted from normal route</p>
+            </div>
+            <span class="ar-time">2:15 PM</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 5: DEVICE MANAGEMENT
+    ============================ -->
+      <section class="section" id="devices">
+        <h2 class="section-title">📱 Device Management</h2>
+        <p class="section-desc">Manage up to 3 devices from a single app.</p>
+
+        <!-- Devices grid -->
+        <div class="devices-grid">
+          <div class="device-card device-card--active">
+            <span class="device-icon">👦</span>
+            <p class="device-name">Child 1</p>
+            <p class="device-sub">Ali's Phone</p>
+            <span class="badge badge-online">Online</span>
+          </div>
+          <div class="device-card">
+            <span class="device-icon">👧</span>
+            <p class="device-name">Child 2</p>
+            <p class="device-sub">Sara's Phone</p>
+            <span class="badge badge-offline">Offline</span>
+          </div>
+          <div class="device-card">
+            <span class="device-icon">🎒</span>
+            <p class="device-name">School Bag Tag</p>
+            <p class="device-sub">GPS Tag #3</p>
+            <span class="badge badge-online">Online</span>
+          </div>
+        </div>
+
+        <!-- Plan Cards -->
+        <h3 class="sub-title">Plans</h3>
+        <div class="plan-grid">
+          <div class="plan-card plan-card--free">
+            <p class="plan-label">Free Plan</p>
+            <p class="plan-price">PKR 0 <span>/month</span></p>
+            <ul class="plan-features">
+              <li>✅ 1 Device</li>
+              <li>✅ Live Location</li>
+              <li>✅ Geo-Fencing</li>
+              <li>❌ SOS Emergency</li>
+              <li>❌ Route Intelligence</li>
+            </ul>
+            <button class="plan-btn plan-btn--free">Current Plan</button>
+          </div>
+          <div class="plan-card plan-card--premium">
+            <div class="plan-popular">⭐ Most Popular</div>
+            <p class="plan-label">Premium Plan</p>
+            <p class="plan-price">PKR 499 <span>/month</span></p>
+            <ul class="plan-features">
+              <li>✅ Up to 3 Devices</li>
+              <li>✅ Live Location</li>
+              <li>✅ Geo-Fencing</li>
+              <li>✅ SOS Emergency</li>
+              <li>✅ Route Intelligence</li>
+            </ul>
+            <button class="plan-btn plan-btn--premium">Upgrade Now</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 6: SOS EMERGENCY
+    ============================ -->
+      <section class="section" id="sos">
+        <!-- SOS Emergency Banner -->
+        <div class="sos-banner">
+          <div class="sos-pulse-ring"></div>
+          <span class="sos-emoji">🆘</span>
+          <h2 class="sos-title">SOS ALERT</h2>
+          <a class="sos-msg" href="location.html">Ali needs help!</a>
+          <p class="sos-location">📍 Live Location Available</p>
+          <a href="#" class="sos-btn">View Live Location Now</a>
+          <p class="sos-push">📲 Push notification sent to all guardians</p>
+        </div>
+
+        <!-- Guardians notified -->
+        <h3 class="sub-title">Guardians Notified</h3>
+        <div class="guardians-list">
+          <div class="guardian-card">
+            <span class="guardian-icon">👩</span>
+            <div class="guardian-info">
+              <p class="guardian-name">Mother</p>
+              <p class="guardian-status">Notified ✅</p>
+            </div>
+            <a href="#" class="guardian-call">📞 Call</a>
+          </div>
+          <div class="guardian-card">
+            <span class="guardian-icon">👨</span>
+            <div class="guardian-info">
+              <p class="guardian-name">Father</p>
+              <p class="guardian-status">Notified ✅</p>
+            </div>
+            <a href="#" class="guardian-call">📞 Call</a>
+          </div>
+          <div class="guardian-card">
+            <span class="guardian-icon">🧑</span>
+            <div class="guardian-info">
+              <p class="guardian-name">Guardian</p>
+              <p class="guardian-status">Notified ✅</p>
+            </div>
+            <a href="#" class="guardian-call">📞 Call</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 7: DEVICE HEALTH
+    ============================ -->
+      <section class="section" id="health">
+        <h2 class="section-title">💻 Device Health</h2>
+
+        <div class="health-grid">
+          <div class="health-card">
+            <span class="health-icon">🔋</span>
+            <p class="health-label">Battery</p>
+            <p class="health-value">68%</p>
+            <div class="battery-bar">
+              <div
+                class="battery-fill battery-fill--med"
+                style="width: 68%"
+              ></div>
+            </div>
+          </div>
+          <div class="health-card">
+            <span class="health-icon">📶</span>
+            <p class="health-label">SIM</p>
+            <p class="health-value">Connected</p>
+            <span class="badge badge-online">Active</span>
+          </div>
+          <div class="health-card">
+            <span class="health-icon">🛰️</span>
+            <p class="health-label">GPS</p>
+            <p class="health-value">Active</p>
+            <span class="badge badge-online">Online</span>
+          </div>
+          <div class="health-card">
+            <span class="health-icon">🕐</span>
+            <p class="health-label">Last Update</p>
+            <p class="health-value">1 Minute Ago</p>
+            <span class="badge badge-safe">Recent</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 8: EXPLORE PAGE
+    ============================ -->
+      <section class="section" id="explore">
+        <h2 class="section-title">🔍 Explore</h2>
+        <p class="section-desc">
+          Curated services and products for your child's safety &amp; growth.
+        </p>
+
+        <!-- Category Cards -->
+        <div class="explore-grid">
+          <div class="explore-card">
+            <span class="explore-icon">🏫</span>
+            <a class="explore-label" href="second.html">Schools</a>
+          </div>
+          <div class="explore-card">
+            <span class="explore-icon">📚</span>
+            <p class="explore-label">Tuition Centers</p>
+          </div>
+          <div class="explore-card">
+            <span class="explore-icon">🧸</span>
+            <p class="explore-label">Child Products</p>
+          </div>
+          <div class="explore-card">
+            <span class="explore-icon">📱</span>
+            <a class="explore-label" href="add.html">Educational Apps</a>
+          </div>
+          <div class="explore-card">
+            <span class="explore-icon">🦺</span>
+            <p class="explore-label">Safety Products</p>
+          </div>
+          <div class="explore-card">
+            <span class="explore-icon">🛡️</span>
+            <p class="explore-label">Insurance</p>
+          </div>
+        </div>
+
+        <!-- Sponsored card -->
+        <h3 class="sub-title">Sponsored</h3>
+        <div class="sponsored-card">
+          <div class="sponsored-left">
+            <span class="sponsored-icon">🏫</span>
+            <div>
+              <p class="sponsored-name">ABC School</p>
+              <p class="sponsored-tag">⭐ Sponsored · School pays Tracklet</p>
+            </div>
+          </div>
+          <span class="sponsored-badge">Ad</span>
+        </div>
+
+        <!-- Product Ads -->
+        <h3 class="sub-title">Featured Products</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <span class="product-icon">🎒</span>
+            <p>School Bags</p>
+          </div>
+          <div class="product-card">
+            <span class="product-icon">📖</span>
+            <p>Books</p>
+          </div>
+          <div class="product-card">
+            <span class="product-icon">✏️</span>
+            <p>Stationery</p>
+          </div>
+          <div class="product-card">
+            <span class="product-icon">🎓</span>
+            <p>Learning Apps</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 9: NOT INCLUDED
+    ============================ -->
+      <section class="section" id="not-included">
+        <h2 class="section-title">🚫 What Tracklet Does NOT Include</h2>
+        <p class="section-desc">
+          Tracklet is a safety device — not a smartphone replacement. This is
+          our advantage.
+        </p>
+
+        <div class="no-feature-grid">
+          <div class="no-feature-card">
+            <span class="no-icon">🎮</span>
+            <p>Games</p>
+          </div>
+          <div class="no-feature-card">
+            <span class="no-icon">📸</span>
+            <p>Social Media</p>
+          </div>
+          <div class="no-feature-card">
+            <span class="no-icon">💬</span>
+            <p>Chat</p>
+          </div>
+          <div class="no-feature-card">
+            <span class="no-icon">📞</span>
+            <p>Calling</p>
+          </div>
+          <div class="no-feature-card">
+            <span class="no-icon">📷</span>
+            <p>Camera</p>
+          </div>
+          <div class="no-feature-card">
+            <span class="no-icon">🎙️</span>
+            <p>Voice Messages</p>
+          </div>
+        </div>
+
+        <!-- Why box -->
+        <div class="why-box">
+          <p class="why-icon">💡</p>
+          <p class="why-text">
+            <strong>Why this matters:</strong> Schools allow Tracklet because
+            it's purely a safety device. Parents trust it. Children can't get
+            distracted. This is Tracklet's core competitive advantage.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===========================
+         SECTION 10: FUTURE FEATURE
+         Route Intelligence
+    ============================ -->
+      <section class="section" id="future">
+        <h2 class="section-title">
+          🚀 Route Intelligence <span class="coming-soon">Coming Soon</span>
+        </h2>
+
+        <div class="route-card">
+          <div class="route-header">
+            <span class="route-icon">🗺️</span>
+            <div>
+              <p class="route-title">Ali's Route Analysis</p>
+              <p class="route-sub">AI-powered route monitoring</p>
+            </div>
+            <span class="badge badge-ai">AI</span>
+          </div>
+
+          <div class="route-timeline">
+            <div class="rt-item rt-item--ok">
+              <span class="rt-dot rt-dot--green"></span>
+              <div class="rt-text">
+                <p class="rt-main">Normal Arrival Time</p>
+                <p class="rt-sub">Ali normally reaches home by 2:30 PM</p>
+              </div>
+            </div>
+            <div class="rt-item rt-item--warn">
+              <span class="rt-dot rt-dot--orange"></span>
+              <div class="rt-text">
+                <p class="rt-main">⏱️ Currently 15 minutes delayed</p>
+                <p class="rt-sub">Unusual pattern detected</p>
+              </div>
+            </div>
+            <div class="rt-item rt-item--alert">
+              <span class="rt-dot rt-dot--red"></span>
+              <div class="rt-text">
+                <p class="rt-main">🔀 Route Deviation</p>
+                <p class="rt-sub">Ali has moved away from the usual route</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- end main-content -->
+
+    <!-- ===========================
+       BOTTOM NAVIGATION BAR
+  ============================ -->
+    <nav class="bottom-nav">
+      <a href="#home" class="bn-item bn-item--active">
+        <span class="bn-icon">🏠</span>
+        <span class="bn-label">Home</span>
+      </a>
+      <a href="#live-tracking" class="bn-item">
+        <span class="bn-icon">📡</span>
+        <span class="bn-label">Live</span>
+      </a>
+      <a href="#alerts" class="bn-item bn-item--sos">
+        <span class="bn-icon">🔔</span>
+        <span class="bn-label">Alerts</span>
+      </a>
+      <a href="#devices" class="bn-item">
+        <span class="bn-icon">📱</span>
+        <span class="bn-label">Devices</span>
+      </a>
+      <a href="#explore" class="bn-item">
+        <span class="bn-icon">🔍</span>
+        <span class="bn-label">Explore</span>
+      </a>
+    </nav>
+  </body>
+</html>
