@@ -161,6 +161,189 @@
           </div>
         </div>
       </section>
+```html
+<!-- CHAT BUTTON -->
+<button id="chatBtn">💬 Chat</button>
+
+<!-- CHAT BOX -->
+<div id="chatBox">
+
+    <div class="chat-header">
+        Tracklet Support
+        <span onclick="closeChat()">✕</span>
+    </div>
+
+    <div class="chat-messages">
+        <div class="bot-msg">
+            Hello! How can we help you today?
+        </div>
+
+        <div class="user-msg">
+            Where is my child currently?
+        </div>
+
+        <div class="bot-msg">
+            The student is currently on the route to school.
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+    </div>
+
+</div>
+
+<style>
+
+/* Floating Button */
+
+#chatBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+    z-index:9999;
+}
+
+#chatBtn:hover{
+    background:#4338ca;
+}
+
+/* Chat Box */
+
+#chatBox{
+    position:fixed;
+    bottom:90px;
+    right:25px;
+    width:350px;
+    height:500px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 5px 25px rgba(0,0,0,.25);
+    z-index:9999;
+}
+
+/* Header */
+
+.chat-header{
+    background:#4f46e5;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+}
+
+.chat-header span{
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* Messages */
+
+.chat-messages{
+    flex:1;
+    padding:15px;
+    overflow-y:auto;
+    background:#f5f7fb;
+}
+
+.bot-msg{
+    background:white;
+    padding:10px 15px;
+    margin-bottom:10px;
+    border-radius:12px;
+    width:max-content;
+    max-width:80%;
+    box-shadow:0 1px 5px rgba(0,0,0,.08);
+}
+
+.user-msg{
+    background:#4f46e5;
+    color:white;
+    padding:10px 15px;
+    margin-left:auto;
+    margin-bottom:10px;
+    border-radius:12px;
+    width:max-content;
+    max-width:80%;
+}
+
+/* Input */
+
+.chat-input{
+    display:flex;
+    padding:10px;
+    border-top:1px solid #ddd;
+    background:white;
+}
+
+.chat-input input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.chat-input button{
+    margin-left:10px;
+    padding:10px 15px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    #chatBox{
+        width:95%;
+        right:2.5%;
+        height:70vh;
+        bottom:80px;
+    }
+
+    #chatBtn{
+        right:15px;
+        bottom:15px;
+    }
+
+}
+
+</style>
+
+<script>
+
+const chatBtn = document.getElementById("chatBtn");
+const chatBox = document.getElementById("chatBox");
+
+chatBtn.addEventListener("click", () => {
+    chatBox.style.display = "flex";
+});
+
+function closeChat(){
+    chatBox.style.display = "none";
+}
+
+</script>
+```
 
       <!-- ===========================
          SECTION 3: GEO-FENCING
